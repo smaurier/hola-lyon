@@ -1,0 +1,21 @@
+.app {
+  color: $color-1;
+
+  header {
+    display: flex;
+    background: $color-5;
+
+    nav > ul {
+      display: flex;
+      list-style-type: none;
+      li {
+        padding: 5px;
+
+        a {
+          color: white;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

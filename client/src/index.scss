@@ -1,3 +1,13 @@
+//variables
+$color-1 : #3D4043;
+$color-2 : #DC4262;
+$color-3 : #DFB547;
+$color-4 : #9CAC5F;
+$color-5 : #427267;
+$color-6 : #A2C0AF;
+
+
+//general
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,3 +21,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+//imports
+@import './App/App.scss';
