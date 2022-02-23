@@ -2,8 +2,7 @@ import React from "react";
 import {
   BrowserRouter as Router,
   Routes,
-  Route,
-  NavLink
+  Route
 } from "react-router-dom";
 
 import Home from "../pages/Home"
@@ -12,33 +11,14 @@ import Classes from "../pages/Classes"
 import Contact from "../pages/Contact"
 import Legals from "../pages/Legals"
 import Container from "../components/Container";
+import Header from "../components/Header"
+import Footer from "../components/Footer";
 
 export default function App() {
   return (
     <Router>
       <div className="app">
-        <header>
-          <nav>
-            <ul>
-              <li>
-                <NavLink to="/">Présentation</NavLink>
-              </li>
-              <li>
-                <NavLink to="/blog">Blog</NavLink>
-              </li>
-              <li>
-                <NavLink to="/classes">Réserve un cours</NavLink>
-              </li>
-              <li>
-                <NavLink to="/contact">Contact</NavLink>
-              </li>
-              <li>
-                <NavLink to="/legals">Mentions légales</NavLink>
-              </li>
-            </ul>
-          </nav>
-        </header>
-
+        <Header />
         <Container>
           <Routes >
             <Route path='/' element={<Home/>} />
@@ -48,6 +28,7 @@ export default function App() {
             <Route path='/legals' element={<Legals/>} />
           </Routes >
         </Container>
+        <Footer />
       </div>
     </Router>
   );
