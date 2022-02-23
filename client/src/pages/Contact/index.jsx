@@ -1,71 +1,58 @@
-import React, { useRef } from 'react'
+import React, { useState } from 'react'
+import Input from '../../components/Input'
 
 function Contact() {
-  const firstNameRef = useRef(null)
-  const lastNameRef = useRef(null)
-  const emailRef = useRef(null)
-  const messageRef = useRef(null)
+  const [firstName, setFirstName] = useState(null)
+  const [lastName, setLastName] = useState(null)
+  const [email, setEmail] = useState(null)
+  const [message, setMessage] = useState(null)
+
+  const handleChange = (event) => {
+    switch(event.target.name){
+      case "firstName" :
+        setFirstName(event.target.value)
+        break;
+      case "lastName" :
+        setLastName(event.target.value)
+        break;
+      case "email" :
+        setEmail(event.target.value)
+        break;
+      case "message" :
+        setMessage(event.target.value)
+        break;
+    }
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault()
 
     const data = {
-      firstName: firstNameRef.current.value,
-      lastName: lastNameRef.current.value,
-      email: emailRef.current.value,
-      message: messageRef.current.value
+      firstName, lastName, email, message
     }
     console.log(data)
-    alert("tadaaa!: \n" + JSON.stringify(data) + "Your data 😎")
   }
 
   return (
-    <>
+    <div className='contact'>
       <h1>Contactez-moi !</h1>
-      <form>
-        <div className="name">
-          <label htmlFor="firstName">First name</label>
-          <input
-            type="text"
-            name="firstName"
-            className="firstName"
-            tabIndex="1"
-            ref={firstNameRef}
-          />
-          <label htmlFor="lastName">Last name</label>
-          <input
-            type="text"
-            name="lastName"
-            className="lastName"
-            tabIndex="2"
-            ref={lastNameRef}
-          />
+      <form onSubmit={handleSubmit}>
+        <div className='form-input'>
+          <Input label="First name" type="text" name="firstName" className="firstName" tabIndex="1" onChange={handleChange}/>
         </div>
-        <div className="mail">
-          <label htmlFor="email">Email :</label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            className="email"
-            placeholder="example@corp.com"
-            tabIndex="3"
-            ref={emailRef}
-          />
+        <div className='form-input'>
+          <Input label="Last Name" type="text" name="lastName" className="lastName" tabIndex="2" onChange={handleChange}/>
         </div>
-        <div>
-          <label htmlFor="message">Message : </label>
-          <textarea
-            placeholder="Votre message ..."
-            className="message"
-            name="message"
-            tabIndex="4"
-            ref={messageRef}
-          />
+        <div className='form-input'>
+          <Input label="Email" type="mail" name="email" className="email" tabIndex="3" placeholder="example@corp.com" onChange={handleChange}/>
         </div>
-        <button onClick={handleSubmit} type="submit" className="send">Envoyer</button>
+        <div className='form-input'>
+          <Input label="Votre Message" type="textarea" name="message" className="message" tabIndex="4" placeholder="Votre message ..." onChange={handleChange}/>
+        </div>
+
+        <button type="submit">Envoyer</button>
       </form>
-    </>
+    </div>
   )
 }
 
