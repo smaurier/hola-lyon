@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 function Footer() {
   return (
     <footer>
-      <span>2022-HOLA-LYON |</span>
+      <span>© {new Date().getFullYear()}-HOLA-LYON /</span>
       <nav>
         <ul>
           <li>

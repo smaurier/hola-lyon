@@ -12,14 +12,16 @@ header {
     list-style-type: none;
 
     li {
-      padding: 0 5px;
+      padding: 0 12px;
 
       a {
-        color: white;
+        color: $color-3;
         text-decoration: none;
+        transition: 2s;
 
         &.active {
           position: relative;
+          color: white;
 
           &::after {
             content: "";

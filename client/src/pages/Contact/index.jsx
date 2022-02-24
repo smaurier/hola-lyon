@@ -35,13 +35,13 @@ function Contact() {
 
   return (
     <div className='contact'>
-      <h1>Contactez-moi !</h1>
+      <h1>Contactez-moi</h1>
       <form onSubmit={handleSubmit}>
         <div className='form-input'>
-          <Input label="First name" type="text" name="firstName" className="firstName" tabIndex="1" onChange={handleChange}/>
+          <Input label="Prénom" type="text" name="firstName" className="firstName" tabIndex="1" onChange={handleChange}/>
         </div>
         <div className='form-input'>
-          <Input label="Last Name" type="text" name="lastName" className="lastName" tabIndex="2" onChange={handleChange}/>
+          <Input label="Nom" type="text" name="lastName" className="lastName" tabIndex="2" onChange={handleChange}/>
         </div>
         <div className='form-input'>
           <Input label="Email" type="mail" name="email" className="email" tabIndex="3" placeholder="example@corp.com" onChange={handleChange}/>
