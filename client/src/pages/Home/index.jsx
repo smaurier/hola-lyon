@@ -13,6 +13,7 @@ function Home (){
         - Quel prix ?
         - Cours en groupe
         - Cours individuels
+        - Mettre en exergue la possibilité de donner des cours d'Anglais
     </>
   )
 }
